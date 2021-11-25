@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     
-    public function show()
+    public function show($post)
     {
         return view('posts.show', [
             'post' => $post
