@@ -36,4 +36,10 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
 }
