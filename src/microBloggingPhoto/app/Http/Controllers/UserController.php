@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+// use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -44,11 +45,11 @@ class UserController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $user)
+    public function show(User $user)
     {
-        $this->name['name'] = $user;
+        // $this->name['name'] = $user;
         return view('user.show', [
-            'user' => $user
+            'user' => $user,
         ]);
     }
 
