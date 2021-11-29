@@ -18,6 +18,10 @@ Route::resource('posts', PostController::class);
 
 Route::resource('user', UserController::class);
 
+// Route::get('user/1', UserController::class);
+
+// Route::put('user/1', UserController::class);
+
 Route::get('/', function () {
     return view('welcome');
 });

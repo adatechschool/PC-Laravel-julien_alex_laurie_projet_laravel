@@ -42,7 +42,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\GET  $user
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
@@ -56,10 +56,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\User  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(User $user)
     {
         //
     }
@@ -71,9 +71,14 @@ class UserController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, User $user)
     {
-        //
+        // $user->name = request('name');
+        // $user->email = request('email');
+        // $user->mot_de_passe = request('password');
+        // $user->biography = request('Biography');
+    
+        // $user->save();
     }
 
     /**
@@ -82,7 +87,7 @@ class UserController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(User $user)
     {
         //
     }
