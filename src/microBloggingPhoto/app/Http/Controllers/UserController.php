@@ -4,6 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+// use App\Models\Post;
+use App\Models\User;
+use Illuminate\Http\Request;
+// à ajouter pour le routage
+use Illuminate\Routing\RedirectController;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Request\Input;
+use Illuminate\http\Concerns\InteractsWithInput;
 
 class UserController extends Controller
 {
@@ -61,6 +69,12 @@ class UserController extends Controller
     public function edit(Post $post)
     {
         //
+    public function edit(User $user)
+    {
+        //-- here -----
+        return view('user.edit', [
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -73,6 +87,16 @@ class UserController extends Controller
     public function update(Request $request, Post $post)
     {
         //
+    public function update($id, Request $data)
+    {
+        //-- here -----
+        $user = user::find($id);
+        $user->name = $data::get('name');
+        $user->save();
+
+        // redirect
+        Session::flash('message', 'Successfully updated user!');
+        //return RedirectController::to('user/' . $id);
     }
 
     /**
@@ -82,6 +106,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Post $post)
+    public function destroy()
     {
         //
     }
